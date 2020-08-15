@@ -5,9 +5,10 @@ import get from 'lodash/get';
 import '../fonts/fonts-post.css';
 import Bio from '../components/Bio';
 import Layout from '../components/Layout';
-import TagIcon from '../components/TagIcon'
+import TagIcon from '../components/TagIcon';
+import Comment from '../components/Comment';
 import SEO from '../components/SEO';
-import Footer from '../components/Footer'
+import Footer from '../components/Footer';
 import { formatPostDate } from '../utils/helpers';
 import { rhythm } from '../utils/typography';
 
@@ -36,11 +37,17 @@ class BlogPostTemplate extends React.Component {
                 {post.frontmatter.title}
               </h1>
               <p className="sub-title">
-                <span style={{ fontFamily: 'sans-serif', marginRight: rhythm(1) }}>
+                <span
+                  style={{ fontFamily: 'sans-serif', marginRight: rhythm(1) }}
+                >
                   {formatPostDate(post.frontmatter.date)}
                 </span>
                 <TagIcon />
-                <Link to={`/tag/${post.frontmatter.tag}`} className="tag" style={{ marginLeft: rhythm(1 / 4) }}>
+                <Link
+                  to={`/tag/${post.frontmatter.tag}`}
+                  className="tag"
+                  style={{ marginLeft: rhythm(1 / 4) }}
+                >
                   {post.frontmatter.tag}
                 </Link>
               </p>
@@ -85,6 +92,13 @@ class BlogPostTemplate extends React.Component {
             </ul>
           </nav>
         </aside>
+
+        <Comment
+          title={post.frontmatter.title}
+          tag={post.frontmatter.tag}
+          url={post.fields.slug}
+        />
+
         <Footer />
       </Layout>
     );
