@@ -24,7 +24,13 @@ npm run dev
 5. 构建静态页面
 ```
 // 输出到public目录下
-npm run build
+npm run build // 或者 gatsby build
 ```
 
-自由选择部署方式。
+静态资源构建完成后，可以选择Nginx托管。
+
+如果你没有服务器，可以选择通过以下静态网站托管服务部署：
+- [surge.sh](https://surge.sh/)
+- [Netlify](https://www.netlify.com/)
+- [now](https://vercel.com/home)
+- ...
