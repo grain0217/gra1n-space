@@ -28,6 +28,7 @@
     "lint-staged": "^8.1.0",
     "lodash": "^4.17.11",
     "pngquant": "^3.1.0",
+    "pngquant-bin": "^3.1.1",
     "prismjs": "^1.15.0",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
@@ -40,6 +41,7 @@
     "eslint": "^4.19.1",
     "eslint-plugin-react": "^7.11.1",
     "gh-pages": "^1.2.0",
+    "imagemin-pngquant": "^5.0.1",
     "prettier": "^1.14.2"
   },
   "homepage": "grain0217.xyz",
