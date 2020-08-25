@@ -1,12 +1,12 @@
-const _ = require('lodash')
-const Promise = require('bluebird')
-const path = require('path')
+const _ = require('lodash');
+const Promise = require('bluebird');
+const path = require('path');
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
-    const blogPost = path.resolve('./src/templates/Post.js')
+    const blogPost = path.resolve('./src/templates/Post.js');
 
     // 首页
     createPage({
@@ -15,7 +15,7 @@ exports.createPages = ({ graphql, actions }) => {
       context: {
         langKey: 'zh-hans',
       },
-    })
+    });
 
     resolve(
       graphql(
@@ -61,17 +61,17 @@ exports.createPages = ({ graphql, actions }) => {
               previous,
               next,
             },
-          })
-        })
+          });
+        });
 
         // 2. tag页面：某个标签下的所有文章
-        let tags = []
+        let tags = [];
         _.each(posts, edge => {
-          if (_.get(edge, "node.frontmatter.tag")) {
-            tags = tags.concat(edge.node.frontmatter.tag)
+          if (_.get(edge, 'node.frontmatter.tag')) {
+            tags = tags.concat(edge.node.frontmatter.tag);
           }
-        })
-        tags = _.uniq(tags)
+        });
+        tags = _.uniq(tags);
         tags.forEach(tag => {
           createPage({
             path: `/tag/${_.kebabCase(tag)}`,
@@ -79,12 +79,12 @@ exports.createPages = ({ graphql, actions }) => {
             context: {
               tag,
             },
-          })
-        })
+          });
+        });
       })
-    )
-  })
-}
+    );
+  });
+};
 
 exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions;
@@ -95,6 +95,6 @@ exports.onCreateNode = ({ node, actions }) => {
       node,
       name: 'directoryName',
       value: path.basename(path.dirname(_.get(node, 'fileAbsolutePath'))),
-    })
+    });
   }
-}
+};

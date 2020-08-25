@@ -1,7 +1,7 @@
 import React from 'react';
 import avatar from '../assets/avatar.jpeg';
 import { rhythm } from '../utils/typography';
-import { username, description} from '../../config';
+import { username, description } from '../../config';
 
 class Bio extends React.Component {
   render() {
@@ -21,7 +21,7 @@ class Bio extends React.Component {
           />
         )}
 
-        <span style={{ maxWidth: 310, display: 'flex', alignItems: 'center' }}>
+        <span style={{ display: 'flex', alignItems: 'center' }}>
           {description}
         </span>
       </div>

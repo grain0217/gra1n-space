@@ -1,14 +1,14 @@
-import React from "react"
-import { graphql, Link } from "gatsby"
-import { kebabCase, get } from "lodash"
-import Layout from "../components/Layout"
-import Footer from "../components/Footer"
-import SEO from "../components/SEO"
+import React from 'react';
+import { graphql, Link } from 'gatsby';
+import { kebabCase, get } from 'lodash';
+import Layout from '../components/Layout';
+import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 
 // 所有tag标签
 class TagIndex extends React.Component {
-  render () {
-    const allTags = get(this.props, 'data.allMarkdownRemark.group')
+  render() {
+    const allTags = get(this.props, 'data.allMarkdownRemark.group');
     return (
       <Layout>
         <div>
@@ -17,9 +17,7 @@ class TagIndex extends React.Component {
           <ul>
             {allTags.map(tag => (
               <li key={tag.fieldValue}>
-                <Link
-                  to={`/tag/${kebabCase(tag.fieldValue)}`}
-                >
+                <Link to={`/tag/${kebabCase(tag.fieldValue)}`}>
                   {tag.fieldValue} ({tag.totalCount})
                 </Link>
               </li>
@@ -28,11 +26,11 @@ class TagIndex extends React.Component {
         </div>
         <Footer hideTag={true} />
       </Layout>
-    )
+    );
   }
 }
 
-export default TagIndex
+export default TagIndex;
 
 export const pageQuery = graphql`
   query {
@@ -43,4 +41,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

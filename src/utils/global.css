@@ -1,6 +1,10 @@
 body {
   --cadetblue: cadetblue;
   background-color: var(--bg);
+  font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans,
+    sans-serif;
+  line-height: 1.6;
+  font-size: 1.1em;
 }
 
 body.light {
@@ -10,8 +14,8 @@ body.light {
   --textTitle: #222;
   --textLink: cadetblue;
   --hr: hsla(0, 0%, 0%, 0.2);
-  --inlineCode-bg: rgba(255, 229, 100, 0.2);
-  --inlineCode-text: #1a1a1a;
+  --inlineCode-bg: rgba(0, 0, 0, 0.05);
+  --inlineCode-text: rgb(51, 51, 51);
 }
 
 body.dark {
@@ -23,8 +27,8 @@ body.dark {
   --textTitle: #ffffff;
   --textLink: cadetblue;
   --hr: hsla(0, 0%, 100%, 0.2);
-  --inlineCode-bg: hsl(222, 14%, 25%);
-  --inlineCode-text: #e6e6e6;
+  --inlineCode-bg: #3a3f4b;
+  --inlineCode-text: #ffffff;
 }
 
 /*
@@ -250,5 +254,23 @@ pre[data-line] {
 .footer {
   font-size: 15px;
   text-align: center;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+h2 {
+  font-family: inherit;
+  font-size: 1.8em;
+}
+h3 {
+  font-family: inherit;
+  font-size: 1.5em;
+}
+
+ol {
+  padding-left: revert;
+}
+
+ol li {
+  margin-bottom: auto;
 }

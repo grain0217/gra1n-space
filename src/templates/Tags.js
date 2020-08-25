@@ -1,15 +1,15 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import { get } from "lodash"
+import React from 'react';
+import { Link, graphql } from 'gatsby';
+import { get } from 'lodash';
 
-import Layout from "../components/Layout"
-import Footer from "../components/Footer"
-import SEO from "../components/SEO"
+import Layout from '../components/Layout';
+import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 
 class TagTemplate extends React.Component {
-  render () {
+  render() {
     const posts = get(this.props, 'data.allMarkdownRemark.edges');
-    const tag = get(this.props, 'pageContext.tag')
+    const tag = get(this.props, 'pageContext.tag');
     return (
       <Layout>
         <SEO title="Tags" />
@@ -19,20 +19,18 @@ class TagTemplate extends React.Component {
             const title = get(node, 'frontmatter.title');
             return (
               <li key={node.fields.slug}>
-                <Link to={node.fields.slug}>
-                  {title}
-                </Link>
+                <Link to={node.fields.slug}>{title}</Link>
               </li>
-            )
+            );
           })}
         </ul>
         <Footer hideTag={true} />
       </Layout>
-    )
+    );
   }
 }
 
-export default TagTemplate
+export default TagTemplate;
 
 export const pageQuery = graphql`
   query($tag: String) {
@@ -55,4 +53,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

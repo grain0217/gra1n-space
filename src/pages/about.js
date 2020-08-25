@@ -1,12 +1,12 @@
-import React from "react"
-import Layout from "../components/Layout"
-import Footer from "../components/Footer"
-import SEO from "../components/SEO"
-import { githubUrl } from '../../config'
+import React from 'react';
+import Layout from '../components/Layout';
+import Footer from '../components/Footer';
+import SEO from '../components/SEO';
+import { githubUrl } from '../../config';
 
 // 所有tag标签
 class About extends React.Component {
-  render () {
+  render() {
     return (
       <Layout>
         <div>
@@ -26,10 +26,7 @@ class About extends React.Component {
           </p>
           <ul>
             <li>
-              <a
-                href={githubUrl}
-                target="blank"
-              >
+              <a href={githubUrl} target="blank">
                 Github
               </a>
             </li>
@@ -37,8 +34,8 @@ class About extends React.Component {
         </div>
         <Footer hideAbout={true} />
       </Layout>
-    )
+    );
   }
 }
 
-export default About
+export default About;
