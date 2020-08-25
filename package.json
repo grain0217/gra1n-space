@@ -31,6 +31,7 @@
     "pngquant-bin": "^3.1.1",
     "prismjs": "^1.21.0",
     "react": "^16.8.2",
+    "react-disqus-comments": "^1.4.0",
     "react-dom": "^16.8.2",
     "react-helmet": "^5.2.0",
     "react-typography": "^0.16.13",
