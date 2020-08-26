@@ -3,7 +3,7 @@
   "private": true,
   "description": "gatsby-blog",
   "version": "1.0.0",
-  "author": "Dan Abramov <dan.abramov@me.com>",
+  "author": "290506494@qq.com",
   "dependencies": {
     "gatsby": "^2.24.47",
     "gatsby-plugin-catch-links": "^2.0.9",
@@ -50,11 +50,7 @@
     "dev": "gatsby develop",
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "format": "prettier --write '{gatsby-*.js,src/**/*.{js,jsx,json,css}}'",
-    "build": "rm -rf public && rm -rf .cache && gatsby build",
-    "all": "npm run sync && npm run build && cd public && now -n blog",
-    "deploy": "cp now.json public/ && cd public && now alias $(now) ssh-blog",
-    "dry": "yarn build && cp now.json public/ && cd public && now",
-    "js-to-jsx": "node src/utils/js-to-jsx"
+    "build": "rm -rf public && rm -rf .cache && gatsby build"
   },
   "husky": {
     "hooks": {
@@ -64,10 +60,6 @@
   "lint-staged": {
     "{gatsby-*.js,src/**/*.{js,jsx,json,css}}": [
       "yarn format",
-      "git add"
-    ],
-    "src/pages/**/*.md": [
-      "yarn run js-to-jsx",
       "git add"
     ]
   }
