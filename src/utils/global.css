@@ -251,6 +251,7 @@ pre[data-line] {
   box-shadow: none;
 }
 
+/* footer组件 */
 .footer {
   font-size: 15px;
   text-align: center;
@@ -265,12 +266,4 @@ h2 {
 h3 {
   font-family: inherit;
   font-size: 1.5em;
-}
-
-ol {
-  padding-left: revert;
-}
-
-ol li {
-  margin-bottom: auto;
 }

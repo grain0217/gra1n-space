@@ -1,0 +1,13 @@
+@media only screen and (max-width: 480px) {
+  .bottom-article_nav {
+    margin-left: 0;
+  }
+}
+
+ol {
+  padding-left: revert;
+}
+
+ol li {
+  margin-bottom: auto;
+}
