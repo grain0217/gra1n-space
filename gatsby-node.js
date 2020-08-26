@@ -74,7 +74,7 @@ exports.createPages = ({ graphql, actions }) => {
         tags = _.uniq(tags);
         tags.forEach(tag => {
           createPage({
-            path: `/tag/${_.kebabCase(tag)}`,
+            path: `/tag/${tag}`,
             component: path.resolve('./src/templates/Tags.js'),
             context: {
               tag,

@@ -32,9 +32,7 @@ class HomeTemplate extends React.Component {
                 <header>
                   <h3
                     style={{
-                      fontFamily:
-                        '"Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif',
-                      fontSize: rhythm(1),
+                      fontSize: rhythm(1.1),
                       marginBottom: rhythm(1 / 4),
                     }}
                   >

@@ -11,3 +11,11 @@ ol {
 ol li {
   margin-bottom: auto;
 }
+
+h4 {
+  font-family: inherit;
+}
+
+blockquote {
+  font-size: inherit;
+}
