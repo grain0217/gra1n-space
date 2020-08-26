@@ -1,0 +1,7 @@
+yarn-error.log
+
+public/
+
+.cache/
+
+node_modules/
