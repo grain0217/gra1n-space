@@ -18,9 +18,9 @@ class HomeTemplate extends React.Component {
     return (
       <Layout>
         <SEO />
-        <aside style={{ marginBottom: rhythm(3) }}>
+        {/* <aside style={{ marginBottom: rhythm(3) }}>
           <Bio />
-        </aside>
+        </aside> */}
         <main>
           {posts.map(({ node }) => {
             const title = get(node, 'frontmatter.title');

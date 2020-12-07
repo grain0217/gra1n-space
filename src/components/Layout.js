@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import Toggle from './Toggle';
 import Helmet from 'react-helmet';
 
+import avatar from '../assets/avatar.jpeg';
 import { rhythm, scale } from '../utils/typography';
 import sun from '../assets/sun.png';
 import moon from '../assets/moon.png';
@@ -22,15 +23,15 @@ class Layout extends React.Component {
   // 顶部header
   renderHeader() {
     return (
-      <h1
-        style={{
-          ...scale(0.75),
-          marginBottom: 0,
-          marginTop: 0,
-        }}
-      >
-        <Link to={'/'}>gra1n的博客</Link>
-      </h1>
+      <Link to={'/'}>
+        <img
+          src={avatar}
+          style={{
+            height: '60px',
+            borderRadius: '30px',
+          }}
+        />
+      </Link>
     );
   }
 

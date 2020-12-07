@@ -223,3 +223,7 @@ h3 {
     'Microsoft Yahei', 'WenQuanYi Micro Hei', 'ST Heiti', sans-serif;
   font-size: 1.5em;
 }
+
+a {
+  box-shadow: none;
+}
