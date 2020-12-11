@@ -7,7 +7,7 @@ class Bio extends React.Component {
   render() {
     return (
       <div style={{ display: 'flex' }}>
-        {avatar && (
+        {/* {avatar && (
           <img
             src={avatar}
             alt={username}
@@ -19,7 +19,7 @@ class Bio extends React.Component {
               borderRadius: '50%',
             }}
           />
-        )}
+        )} */}
 
         <span style={{ display: 'flex', alignItems: 'center' }}>
           {description}

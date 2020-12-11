@@ -46,7 +46,7 @@ exports.createPages = ({ graphql, actions }) => {
           return;
         }
 
-        // 1. 博客post页
+        // 1. 博客内容页
         const posts = result.data.allMarkdownRemark.edges;
         _.each(posts, (post, index) => {
           const previous =

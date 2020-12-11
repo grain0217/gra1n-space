@@ -21,14 +21,10 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout>
-        <SEO
-          title={post.frontmatter.title}
-          description={post.frontmatter.spoiler}
-          slug={post.fields.slug}
-        />
+        <SEO title={post.frontmatter.title} slug={post.fields.slug} />
         <main>
           <article>
-            <header style={{ marginBottom: rhythm(2) }}>
+            <header style={{ marginBottom: rhythm(1) }}>
               <h1
                 style={{
                   color: 'var(--textTitle)',
@@ -36,7 +32,7 @@ class BlogPostTemplate extends React.Component {
               >
                 {post.frontmatter.title}
               </h1>
-              <p className="sub-title">
+              <p>
                 <span
                   style={{ fontFamily: 'sans-serif', marginRight: rhythm(1) }}
                 >
@@ -56,11 +52,11 @@ class BlogPostTemplate extends React.Component {
           </article>
         </main>
         <aside>
-          <hr style={{ marginBottom: rhythm(3) }} />
+          <hr style={{ marginBottom: rhythm(1) }} />
 
           <Bio />
 
-          <nav style={{ marginTop: rhythm(2) }}>
+          <nav style={{ marginTop: rhythm(1) }}>
             <ul
               style={{
                 display: 'flex',
@@ -116,7 +112,6 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         tag
-        spoiler
       }
       fields {
         slug
