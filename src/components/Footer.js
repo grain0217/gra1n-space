@@ -12,7 +12,6 @@ class Footer extends React.Component {
       <footer
         className="footer"
         style={{
-          // marginTop: rhythm(2.5),
           paddingTop: rhythm(1),
           display: 'flex',
           justifyContent: 'space-between',
@@ -20,11 +19,11 @@ class Footer extends React.Component {
       >
         <div> © 2020 {username} </div>
         <div>
-          {!hideTag && (
-            <Link to="/tag" style={{ marginRight: rhythm(1 / 5) }}>
+          {/* {!hideTag && (
+            <Link to="/tag" style={{ marginRight: rhythm(1 / 5), color: '#42b983' }}>
               分类
             </Link>
-          )}
+          )} */}
           {!hideAbout && <Link to="/about">关于</Link>}
         </div>
       </footer>

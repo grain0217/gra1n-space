@@ -32,7 +32,7 @@ class BlogPostTemplate extends React.Component {
               >
                 {post.frontmatter.title}
               </h1>
-              <p>
+              <div className="content-title">
                 <span
                   style={{ fontFamily: 'sans-serif', marginRight: rhythm(1) }}
                 >
@@ -46,7 +46,7 @@ class BlogPostTemplate extends React.Component {
                 >
                   {post.frontmatter.tag}
                 </Link>
-              </p>
+              </div>
             </header>
             <div dangerouslySetInnerHTML={{ __html: html }} />
           </article>

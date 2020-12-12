@@ -24,7 +24,7 @@ class About extends React.Component {
           <p>
             希望在这里记录自己学习到的知识、遇到的问题，同时提高自己的表达和写作能力。
           </p>
-          <ul>
+          <ul style={{ marginTop: '1rem' }}>
             <li>
               <a href={githubUrl} target="blank">
                 Github
