@@ -48,7 +48,10 @@ class BlogPostTemplate extends React.Component {
                 </Link>
               </div>
             </header>
-            <div dangerouslySetInnerHTML={{ __html: html }} />
+            <div
+              className="content-body"
+              dangerouslySetInnerHTML={{ __html: html }}
+            />
           </article>
         </main>
         <aside>
