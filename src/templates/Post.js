@@ -59,7 +59,7 @@ class BlogPostTemplate extends React.Component {
 
           <Bio />
 
-          <nav style={{ marginTop: rhythm(1) }}>
+          <nav style={{ marginTop: rhythm(1 / 2) }}>
             <ul
               style={{
                 display: 'flex',
@@ -67,6 +67,7 @@ class BlogPostTemplate extends React.Component {
                 justifyContent: 'space-between',
                 listStyle: 'none',
                 padding: 0,
+                marginLeft: 0,
               }}
               className="bottom-article_nav"
             >
