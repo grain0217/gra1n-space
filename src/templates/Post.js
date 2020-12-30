@@ -33,9 +33,7 @@ class BlogPostTemplate extends React.Component {
                 {post.frontmatter.title}
               </h1>
               <div className="content-title">
-                <span
-                  style={{ fontFamily: 'sans-serif', marginRight: rhythm(1) }}
-                >
+                <span style={{ marginRight: rhythm(1) }}>
                   {formatPostDate(post.frontmatter.date)}
                 </span>
                 <TagIcon />
