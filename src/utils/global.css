@@ -12,7 +12,7 @@ body.light {
   --header: var(--green);
   --textNormal: #444;
   --textTitle: #222;
-  --textLink: #42b983;
+  --textLink: var(--green);
   --hr: hsla(0, 0%, 0%, 0.2);
   --inlineCode-bg: rgba(0, 0, 0, 0.05);
   --inlineCode-text: rgb(51, 51, 51);
@@ -24,7 +24,7 @@ body.dark {
   --header: #ffffff;
   --textNormal: rgba(255, 255, 255, 0.88);
   --textTitle: #ffffff;
-  --textLink: #42b983;
+  --textLink: var(--green);
   --hr: hsla(0, 0%, 100%, 0.2);
   --inlineCode-bg: #3a3f4b;
   --inlineCode-text: #ffffff;
@@ -32,19 +32,24 @@ body.dark {
 
 ol,
 ul {
-  margin-left: 1rem;
-}
-
-li ul {
-  margin-left: 1rem;
+  margin-left: 2rem;
+  margin-bottom: 0.75rem;
 }
 
 ol {
   margin-bottom: 0;
 }
 
+li {
+  margin-bottom: 0;
+}
+
+li ul {
+  margin-left: 1rem;
+  margin-top: 0;
+}
+
 p {
-  margin-top: 0.7rem;
   margin-bottom: 0;
   text-indent: 1.5rem;
   word-break: break-all;
@@ -57,13 +62,6 @@ ol li p {
 
 ol li p {
   margin: 0;
-}
-
-h1 + p,
-h2 + p,
-h3 + p,
-h4 + p {
-  text-indent: 0;
 }
 
 .dark td,
@@ -250,26 +248,17 @@ pre[data-line] {
   background: #011627;
   -webkit-overflow-scrolling: touch;
   overflow: auto;
+  margin-left: 1.5rem;
 }
 
 h3 + .gatsby-highlight {
   margin-top: 1rem;
 }
 
-@media (max-width: 672px) {
+@media only screen and (max-width: 672px) {
   .gatsby-highlight {
     border-radius: 0;
   }
-}
-
-@media only screen and (max-width: 480px) {
-  p + ol {
-    margin-left: 0;
-  }
-}
-
-.content-body > ol:last-child {
-  margin-left: 0;
 }
 
 .gatsby-highlight pre[class*='language-'] {
@@ -286,7 +275,6 @@ h3 + .gatsby-highlight {
 }
 
 .post-title {
-  color: #42b983;
   width: calc(100% - 130px);
   line-height: 1.2;
 }
@@ -299,6 +287,29 @@ h3 + .gatsby-highlight {
 .sub-title .tag {
   font-family: Open Sans Condensed, Futura, AvenirNext, Avenir, sans-serif;
   box-shadow: none;
+}
+
+.page {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  font-family: 'fangsong';
+  margin-bottom: 0;
+}
+
+.page a {
+  color: var(--textNormal);
+}
+
+.page a.current-page {
+  color: var(--green);
+}
+
+.page a.page-prev,
+.page a.page-next {
+  color: var(--textNormal);
 }
 
 /* footer组件 */
@@ -331,9 +342,10 @@ h3 + ol {
   margin-top: 1rem;
 }
 
-h4 {
-  margin-bottom: 0;
-  margin-top: 1rem;
+h4,
+h5 {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 a {

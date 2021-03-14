@@ -61,7 +61,7 @@ class BlogPostTemplate extends React.Component {
             <ul
               style={{
                 display: 'flex',
-                flexWrap: 'wrap',
+                // flexWrap: 'wrap',
                 justifyContent: 'space-between',
                 listStyle: 'none',
                 padding: 0,
@@ -69,7 +69,7 @@ class BlogPostTemplate extends React.Component {
               }}
               className="bottom-article_nav"
             >
-              <li>
+              <li style={{ flex: 1 }}>
                 {previous && (
                   <Link
                     to={previous.fields.slug}
@@ -80,7 +80,7 @@ class BlogPostTemplate extends React.Component {
                   </Link>
                 )}
               </li>
-              <li>
+              <li style={{ flex: 1, textAlign: 'right' }}>
                 {next && (
                   <Link to={next.fields.slug} rel="next">
                     {next.frontmatter.title} &gt;&gt;
