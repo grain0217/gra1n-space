@@ -150,11 +150,12 @@ pre[class*='language-'] ::selection {
 }
 
 blockquote {
-  margin-left: 0.25rem;
   background-color: antiquewhite;
   font-style: normal;
   margin-inline-start: 1rem;
-  margin-block-end: 0.75rem;
+  margin-block-start: 0.25rem;
+  margin-block-end: 0.25rem;
+  padding-left: 0.25rem;
 }
 
 blockquote p {
