@@ -33,7 +33,7 @@ class BlogPostTemplate extends React.Component {
                 {post.frontmatter.title}
               </h1>
               <div className="content-title">
-                <span style={{ marginRight: rhythm(1) }}>
+                <span style={{ marginRight: rhythm(1), fontFamily: 'serif' }}>
                   {formatPostDate(post.frontmatter.date)}
                 </span>
                 <TagIcon />
@@ -108,7 +108,6 @@ export default BlogPostTemplate;
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
       html
       frontmatter {
         title

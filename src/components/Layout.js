@@ -4,7 +4,7 @@ import Toggle from './Toggle';
 import Helmet from 'react-helmet';
 
 import avatar from '../assets/avatar.jpeg';
-import { rhythm, scale } from '../utils/typography';
+import { rhythm } from '../utils/typography';
 import sun from '../assets/sun.png';
 import moon from '../assets/moon.png';
 

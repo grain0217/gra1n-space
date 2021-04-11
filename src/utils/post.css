@@ -4,18 +4,330 @@
   }
 }
 
-/* ol {
-  padding-left: revert;
-} */
+.content-body {
+  word-break: break-all;
+}
 
 ol li {
   margin-bottom: auto;
 }
 
-h4 {
-  font-family: inherit;
+h1 {
+  font-family: cursive;
+}
+
+h4,
+h5 {
+  text-transform: none;
+  font-family: serif;
 }
 
 blockquote {
   font-size: inherit;
+}
+
+p {
+  font-family: serif;
+}
+
+ol,
+ul {
+  margin-left: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+ol {
+  margin-bottom: 0;
+}
+
+li {
+  margin-bottom: 0;
+}
+
+li ul {
+  margin-left: 1rem;
+  margin-top: 0;
+}
+
+li p {
+  margin-bottom: 0;
+}
+
+p {
+  margin-bottom: 0;
+  text-indent: 1.5rem;
+  word-break: break-all;
+}
+
+ul li p,
+ol li p {
+  text-indent: 0;
+}
+
+ol li p {
+  margin: 0;
+}
+
+.dark td,
+th {
+  border-bottom: 1px solid;
+}
+
+th {
+  white-space: nowrap;
+}
+
+/**
+ * Based on copypasta from Remy Bach and Sarah Drasner
+ */
+code[class*='language-'],
+pre[class*='language-'] {
+  color: white;
+  background: none;
+  font-feature-settings: normal;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  margin-bottom: 0;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+hr {
+  margin-top: 1rem;
+}
+
+/* Code blocks */
+pre[class*='language-'] {
+  overflow: auto;
+  padding: 1.3125rem;
+}
+
+pre[class*='language-']::-moz-selection {
+  /* Firefox */
+  background: hsl(207, 4%, 16%);
+}
+
+pre[class*='language-']::selection {
+  /* Safari */
+  background: hsl(207, 4%, 16%);
+}
+
+/* Text Selection colour */
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection {
+  text-shadow: none;
+  background: hsla(0, 0%, 100%, 0.15);
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection {
+  text-shadow: none;
+  background: hsla(0, 0%, 100%, 0.15);
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+  border-radius: 0.2em;
+  background: var(--inlineCode-bg);
+  color: var(--inlineCode-text);
+  padding: 0.15em 0.2em 0.05em;
+  white-space: normal;
+}
+
+.dark :not(pre) > code[class*='language-'] {
+  background-color: saddlebrown;
+}
+
+blockquote {
+  background-color: antiquewhite;
+  font-style: normal;
+  margin-inline-start: 1rem;
+  margin-block-start: 0.25rem;
+  margin-block-end: 0.25rem;
+  padding-left: 0.25rem;
+}
+
+blockquote p {
+  text-indent: 0;
+}
+
+.dark blockquote {
+  background-color: #011627;
+}
+
+.dark blockquote strong {
+  color: aquamarine;
+}
+
+.dark blockquote .language-text {
+  background-color: dimgrey;
+}
+
+.token.attr-name {
+  color: rgb(173, 219, 103);
+  font-style: italic;
+}
+
+.token.comment {
+  color: rgb(128, 147, 147);
+}
+
+.token.string,
+.token.url {
+  color: rgb(173, 219, 103);
+}
+
+.token.variable {
+  color: rgb(214, 222, 235);
+}
+
+.token.number {
+  color: rgb(247, 140, 108);
+}
+
+.token.builtin,
+.token.char,
+.token.constant,
+.token.function {
+  color: rgb(130, 170, 255);
+}
+
+.token.punctuation {
+  color: rgb(199, 146, 234);
+}
+
+.token.selector,
+.token.doctype {
+  color: rgb(199, 146, 234);
+  font-style: 'italic';
+}
+
+.token.class-name {
+  color: rgb(255, 203, 139);
+}
+
+.token.tag,
+.token.operator,
+.token.keyword {
+  color: #ffa7c4;
+}
+
+.token.boolean {
+  color: rgb(255, 88, 116);
+}
+
+.token.property {
+  color: rgb(128, 203, 196);
+}
+
+.token.namespace {
+  color: rgb(178, 204, 214);
+}
+
+pre[data-line] {
+  padding: 1em 0 1em 3em;
+  position: relative;
+}
+
+.gatsby-highlight-code-line {
+  background-color: hsla(207, 95%, 15%, 1);
+  display: block;
+  margin-right: -1.3125rem;
+  margin-left: -1.3125rem;
+  padding-right: 1em;
+  padding-left: 1.25em;
+  border-left: 0.25em solid #ffa7c4;
+}
+
+.gatsby-highlight pre[class*='language-'] {
+  float: left;
+  min-width: 100%;
+}
+
+h1 {
+  margin-top: 2rem;
+}
+
+h2 {
+  font-family: inherit;
+  margin-top: 1.5rem;
+}
+
+h3 {
+  font-family: serif;
+  font-size: 1.5em;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+h3 + ul,
+h3 + ol {
+  margin-top: 1rem;
+}
+
+h4,
+h5 {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* 内容页样式 */
+.content-title {
+  display: flex;
+  align-items: center;
+}
+
+/* 内容页样式 */
+.content-title {
+  display: flex;
+  align-items: center;
+}
+
+.post-title {
+  width: calc(100% - 130px);
+  line-height: 1.2;
+}
+
+.sub-title {
+  width: 130px;
+  text-align: right;
+}
+
+.sub-title .tag {
+  font-family: Open Sans Condensed, Futura, AvenirNext, Avenir, sans-serif;
+  box-shadow: none;
+}
+
+.page {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  font-family: 'fangsong';
+  margin-bottom: 0;
+}
+
+.page a {
+  color: var(--textNormal);
+}
+
+.page a.current-page {
+  color: var(--green);
+}
+
+.page a.page-prev,
+.page a.page-next {
+  color: var(--textNormal);
 }

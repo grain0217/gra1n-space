@@ -8,7 +8,8 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise((resolve, reject) => {
     const catalogTemplate = path.resolve('./src/templates/Pages.js');
     const postTemplate = path.resolve('./src/templates/Post.js');
-    // const tagsTemplate = path.resolve('./src/templates/Tags.js');
+    const tagsTemplate = path.resolve('./src/templates/Tags.js');
+    const tagTemplate = path.resolve('./src/templates/Tag.js');
 
     resolve(
       graphql(
@@ -25,17 +26,13 @@ exports.createPages = ({ graphql, actions }) => {
                   }
                   frontmatter {
                     title
+                    tag
                   }
                 }
               }
             }
           }
         `
-        // tagsGroup: allMarkdownRemark(limit: 1000) {
-        //   allTags(field: frontmatter___tags) {
-        //     fieldValue
-        //   }
-        // }
       ).then(result => {
         if (result.errors) {
           console.log(result.errors);
@@ -79,17 +76,37 @@ exports.createPages = ({ graphql, actions }) => {
           });
         });
 
-        // // tag页面：某个标签下的所有文章
-        // const tags = result.data.tagsGroup.group
-        // tags.forEach(tag => {
-        //   createPage({
-        //     path: `/tag/${tag.fieldValue}`,
-        //     component: tagsTemplate,
-        //     context: {
-        //       tag: tag.fieldValue
-        //     },
-        //   });
-        // });
+        // 获取所有文章的tag
+        let _tags = [];
+        _.each(posts, edge => {
+          if (_.get(edge, 'node.frontmatter.tag')) {
+            _tags = _tags.concat(edge.node.frontmatter.tag);
+          }
+        });
+
+        const tagStatistics = _.countBy(_tags);
+        const tags = [];
+        for (let tag in tagStatistics) {
+          tags.push({
+            tag,
+            count: tagStatistics[tag],
+          });
+          createPage({
+            path: `/tag/${_.kebabCase(tag)}/`,
+            component: tagTemplate,
+            context: {
+              tag,
+            },
+          });
+        }
+        // 全部tags
+        createPage({
+          path: '/tags',
+          component: tagsTemplate,
+          context: {
+            tags,
+          },
+        });
       })
     );
   });

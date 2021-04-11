@@ -6,8 +6,7 @@ import { rhythm } from '../utils/typography';
 
 class Footer extends React.Component {
   render() {
-    const hideTag = this.props.hideTag;
-    const hideAbout = this.props.hideAbout;
+    const { hideTag, hideAbout } = this.props;
     return (
       <footer
         className="footer"
@@ -17,13 +16,13 @@ class Footer extends React.Component {
           justifyContent: 'space-between',
         }}
       >
-        <div> © 2020 {username} </div>
-        <div>
-          {/* {!hideTag && (
-            <Link to="/tag" style={{ marginRight: rhythm(1 / 5), color: '#42b983' }}>
+        <div> © 2021 {username} </div>
+        <div className="anchor">
+          {!hideTag && (
+            <Link to="/tags" style={{ marginRight: rhythm(1 / 4) }}>
               分类
             </Link>
-          )} */}
+          )}
           {!hideAbout && <Link to="/about">关于</Link>}
         </div>
       </footer>
